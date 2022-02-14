@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
 	$rand=rand(111111111,999999999);
 	move_uploaded_file($_FILES['file']['tmp_name'],'upload/'.$rand.$_FILES['file']['name']);
 	
-	$file="hawkarit.rf.gd/".$rand.$_FILES['file']['name'];
+	$file="yourwebsite.com/".$rand.$_FILES['file']['name'];
 	
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, 'https://api.remove.bg/v1.0/removebg');
@@ -36,7 +36,7 @@ if(isset($_POST['submit'])){
 	);
 	curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 	$headers = array();
-	$headers[] = 'X-Api-Key: 42fmThYw44J9xagfry3WgGWh';
+	$headers[] = 'X-Api-Key: YOUR-KEY';
 	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 	$result = curl_exec($ch);
 	curl_close($ch);
